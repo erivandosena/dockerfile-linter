@@ -1,0 +1,25 @@
+# wget -O hadolint https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64
+# sudo mv hadolint /usr/local/bin/hadolint
+# sudo chmod +x /usr/local/bin/hadolint
+
+# Use:
+# hadolint --config .hadolint.yaml Dockerfile
+
+failure-threshold: warning
+format: tty
+ignored:
+- DL3007
+override:
+  error:
+  - DL3015
+  warning:
+  - DL3015
+  info:
+  - DL3008
+  style:
+  - DL3015
+trustedRegistries:
+- docker.io
+- techiescamp.com:5000
+- "*.gcr.io"
+- quay.io
